@@ -1,0 +1,3 @@
+# Add to .bashrc
+function fingerprintssh() { ssh-keygen -lf $1 -E sha256; }
+function fingerprintssl() { openssl pkey -pubin -in $1 -outform DER | openssl dgst -sha256 -c; }
